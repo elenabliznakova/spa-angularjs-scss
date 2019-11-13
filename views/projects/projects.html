@@ -1,0 +1,30 @@
+<div ng-controller="ProjectsCtrl">
+  <div class="middle-container">
+    <div class="projects-collection">
+      <div ng-if="loading">
+        Loading Data Plesase Wait...
+        <br/>
+        <br/>
+        <img src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif"/>
+      </div>
+    </div>
+    <table id="rwd-table-large">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Publish Date</th>
+        <th>Location City</th>
+        <th>Number of cooments</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="project in projects" ng-click="ShowDetails(project)">
+        <td>{{project.title}}</td>
+        <td>{{project['publish_date'] | date:'yyyy-MM-dd HH:mm'}}</td>
+        <td>{{project['location_city']}}</td>
+        <td>{{project.comments}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
